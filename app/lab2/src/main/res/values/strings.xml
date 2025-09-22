@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">lab2</string>
+    <string name="add_kid_button">Добавить ребёнка</string>
+    <string name="add_adult_button">Добавить взрослого</string>
+    <string name="reset_button">Сброс счётчика</string>
+    <string name="counter_text_empty">Пассажиров нет</string>
+    <string name="counter_text">Всего пассажиров: %1$d/%2$d чел. \n Взрослых: %3$d чел.\n Детей: %4$d чел.</string>
+    <string name="error_text">Места закончились</string>
+    <string name="scroll_description">Фотографии пассажиров</string>
+</resources>

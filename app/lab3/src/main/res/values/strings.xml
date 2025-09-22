@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lab3</string>
+    <string name="button_plus">+</string>
+    <string name="button_minus">-</string>
+    <string name="button_mult">*</string>
+    <string name="button_div">/</string>
+    <string name="result_text">%1$d %2$c %3$d = %4$d</string>
+</resources>

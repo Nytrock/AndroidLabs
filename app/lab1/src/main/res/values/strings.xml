@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Hello</string>
+    <string name="plain_text_name">Name</string>
+    <string name="dog_name">Имя собаки</string>
+    <string name="dog_image_description">Картинка собаки</string>
+    <string name="plain_text_title">Введите имя собаки</string>
+    <string name="button_text">Поприветствовать</string>
+    <string name="response_default">Здравствуй, собака!</string>
+    <string name="response_with_name">Здравствуй, %1$s!</string>
+</resources>
