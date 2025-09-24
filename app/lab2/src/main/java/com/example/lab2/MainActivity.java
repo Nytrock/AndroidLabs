@@ -52,15 +52,12 @@ public class MainActivity extends AppCompatActivity {
         KidsImages = new int[] {R.drawable.kid_1, R.drawable.kid_2, R.drawable.kid_3, R.drawable.kid_4, R.drawable.kid_5};
         AdultsImages = new int[] {R.drawable.adult_1, R.drawable.adult_2, R.drawable.adult_3, R.drawable.adult_4, R.drawable.adult_5};
 
-        ButtonClear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                KidsCounter = 0;
-                AdultsCounter = 0;
-                updateText();
-                ImagesContainer.removeAllViews();
-                changeErrorState(false);
-            }
+        ButtonClear.setOnClickListener(view -> {
+            KidsCounter = 0;
+            AdultsCounter = 0;
+            updateText();
+            ImagesContainer.removeAllViews();
+            changeErrorState(false);
         });
         updateText();
     }
