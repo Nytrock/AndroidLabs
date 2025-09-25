@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity {
     private void placeDot() {
         String nowNumber = getCurrentNumberRaw();
         if (isCalculated || nowNumber.isEmpty()) {
+            isCalculated = false;
             setCurrentNumberRaw("0.");
             return;
         }
@@ -97,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
     private void placeUnaryOperation(String operationToPlace){
         unaryOperation = operationToPlace;
         calculateResult();
-        updateOutputText();
     }
 
     private void clearAll() {
@@ -111,8 +111,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void clearNumber() {
-        if (getCurrentNumberRaw().isEmpty())
+        if (getCurrentNumberRaw().isEmpty()){
+            updateOutputText();
             return;
+        }
 
         setCurrentNumberRaw("");
     }
@@ -155,15 +157,19 @@ public class MainActivity extends AppCompatActivity {
 
         switch (unaryOperation){
             case "sin":
-                nowNumber = Math.sin(nowNumber);
+                nowNumber = Math.sin(nowNumber * Math.PI / 180);
                 break;
             case "cos":
-                nowNumber = Math.cos(nowNumber);
+                nowNumber = Math.cos(nowNumber * Math.PI / 180);
                 break;
             case "tan":
-                nowNumber = Math.tan(nowNumber);
+                nowNumber = Math.tan(nowNumber * Math.PI / 180);
                 break;
             case "sqrt":
+                if (nowNumber < 0){
+                    throwError();
+                    return;
+                }
                 nowNumber = Math.sqrt(nowNumber);
                 break;
         }

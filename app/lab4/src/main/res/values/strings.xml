@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Lab4</string>
+    <string name="second_screen">Второй экран</string>
+    <string name="screen_change_button">Переход на второй экран</string>
+    <string name="tesla">ТЕСЛА</string>
+</resources>
