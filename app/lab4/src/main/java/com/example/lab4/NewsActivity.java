@@ -17,9 +17,6 @@ public class NewsActivity extends AppCompatActivity {
         Intent intent = getIntent();
         TextView title = findViewById(R.id.newsTitle);
         TextView text = findViewById(R.id.newsText);
-
-        title.setText(intent.getIntExtra("title", R.string.news_title_default));
-        text.setText(intent.getIntExtra("text", R.string.news_text_default));
     }
 
     public void closeActivity(View view) {

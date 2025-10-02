@@ -1,44 +1,12 @@
 <resources>
     <string name="app_name">Lab4</string>
-    <string name="home_title">Сайт университета</string>
+    <string name="generate_button">Сгенерировать</string>
 
-    <string name="news_title">Новости</string>
-    <string name="news_label">Новости</string>
-    <string name="news_title_default">Заголовок новости</string>
-    <string name="news_text_default">Текст новости</string>
-    <string name="news_title_1">Проведение патриотического семинара</string>
-    <string name="news_text_1">
-        3 сентября 2025г. состоялся семинар на тему: «Эколого-патриотическая визитная карточка
-        призывника в Вооруженные Силы Российской Федерации от Брянской области».
-    </string>
-    <string name="news_title_2">XI Всероссийская студенческая олимпиада</string>
-    <string name="news_text_2">
-        Актионада – это олимпиада Всероссийского уровня, которая помогает активным
-        студентам проявить себя и прокачать свои навыки.\nВсе участники получат сертификат
-        участия после прохождения отборочного тестирования,
-        а финалисты смогут получить денежные призы.
-    </string>
+    <string name="news_title">Генератор новостей</string>
+    <string name="news_input_title">Заголовок</string>
+    <string name="news_input_text">Текст</string>
+    <string name="news_input_date">Дата выхода</string>
+    <string name="news_screen_label">Сгенерированная новость</string>
 
-    <string name="articles_title">Статьи</string>
-    <string name="articles_label">Статьи</string>
-    <string name="articles_title_default">Заголовок статьи</string>
-    <string name="articles_text_default">Текст статьи</string>
-    <string name="articles_title_1">Как правильно проводить лесозаготовку</string>
-    <string name="articles_text_1">
-        Я не знаю, как правильно проводить лесозаготовку
-    </string>
-    <string name="articles_title_2">5 приложений для более эффективного обучения</string>
-    <string name="articles_text_2">
-        Учись, студент
-    </string>
-
-    <string name="albums_title">Альбомы</string>
-    <string name="albums_label">Альбомы</string>
-    <string name="albums_title_default">Заголовок альбома</string>
-    <string name="albums_title_1">Студенческая весна 2023</string>
-    <string name="albums_title_2">Студлидер 2023</string>
-
-    <string name="close_button">Назад</string>
-    <string name="other_title">Прочее</string>
-    <string name="contact_title">Написать нам</string>
+    <string name="email_title">Генератор письма</string>
 </resources>

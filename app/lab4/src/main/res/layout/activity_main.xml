@@ -9,15 +9,6 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/homeTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/home_title"
-        android:textAlignment="center"
-        android:textSize="40sp"
-        android:textStyle="bold" />
-
-    <TextView
         android:id="@+id/newsTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,108 +16,20 @@
         android:textSize="34sp"
         android:textStyle="bold" />
 
-    <LinearLayout
-        android:id="@+id/newsContainer"
-        style="?android:attr/buttonBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/newsButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/news_title_1" />
-
-        <Button
-            android:id="@+id/newsButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/news_title_2" />
-    </LinearLayout>
-
     <TextView
-        android:id="@+id/articlesTitle"
+        android:id="@+id/emailTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/articles_title"
+        android:text="@string/email_title"
         android:textSize="34sp"
         android:textStyle="bold" />
 
-    <LinearLayout
-        android:id="@+id/articlesContainer"
-        style="?android:attr/buttonBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/articlesButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/articles_title_1" />
-
-        <Button
-            android:id="@+id/articlesButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/articles_title_2" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/albumsTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/albums_title"
-        android:textSize="34sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:id="@+id/albumsContainer"
-        style="?android:attr/buttonBarStyle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/albumsButton1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/albums_title_1" />
-
-        <Button
-            android:id="@+id/albumsButton2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/albums_title_2" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/otherTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/other_title"
-        android:textSize="34sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
+    <Button
+        android:id="@+id/sendEmailButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_weight="1"
+        android:onClick="sendEmail"
+        android:text="@string/generate_button" />
 
-        <Button
-            android:id="@+id/contactButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="sendEmail"
-            android:text="@string/contact_title" />
-    </LinearLayout>
 </LinearLayout>
