@@ -18,15 +18,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".NewsActivity"
-            android:label="@string/news_screen_label">
+        <activity android:name=".DataActivity" android:label="@string/data_activity_label">
+
         </activity>
     </application>
-
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.SEND" />
-            <data android:mimeType="text/plain" />
-        </intent>
-    </queries>
 </manifest>

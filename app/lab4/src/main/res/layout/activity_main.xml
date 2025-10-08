@@ -9,27 +9,70 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/newsTitle"
+        android:id="@+id/textTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/news_title"
+        android:text="@string/data_title"
         android:textSize="34sp"
         android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/emailTitle"
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="59dp"
+        android:ems="10"
+        android:hint="@string/text_input"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editNumber"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="@string/number_input"
+        android:inputType="number" />
+
+    <CheckBox
+        android:id="@+id/dataCheckbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/email_title"
-        android:textSize="34sp"
-        android:textStyle="bold" />
+        android:text="@string/show_date_checkbox" />
 
     <Button
-        android:id="@+id/sendEmailButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/dataButton"
+        android:layout_width="182dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:onClick="sendEmail"
-        android:text="@string/generate_button" />
+        android:onClick="sendData"
+        android:text="@string/data_button" />
+
+    <TextView
+        android:id="@+id/messageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/browserButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="openOtherApp"
+            android:text="@string/browser_button" />
+
+        <Button
+            android:id="@+id/webButton"
+            android:layout_width="217dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="openWebsite"
+            android:text="@string/web_button" />
+
+    </LinearLayout>
 
 </LinearLayout>

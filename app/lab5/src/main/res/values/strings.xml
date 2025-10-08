@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Lab5</string>
+    <string name="second_activity">Результат</string>
+    <string name="edit_text_name">Введите фамилию</string>
+    <string name="edit_text_birthday">Введите год рождения</string>
+    <string name="status_select_title">Укажите социальное положение</string>
+    <string name="status_schoolboy">Школьник</string>
+    <string name="status_student">Студент</string>
+    <string name="status_engineer">Инженер</string>
+    <string name="button_submit">Ок</string>
+    <string name="name_title">Фамилия, имя</string>
+    <string name="birthday_title">Год рождения</string>
+    <string name="status_title">Социальное положение</string>
+    <string name="close">Закрыть</string>
 </resources>
