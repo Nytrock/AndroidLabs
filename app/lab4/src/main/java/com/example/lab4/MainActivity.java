@@ -26,7 +26,17 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
-    public void sendData(View view){
+    public void sendDataWithRotateAnimation(View view){
+        sendData();
+        overridePendingTransition(R.anim.rotate_in_right, R.anim.rotate_out_left);
+    }
+
+    public void sendDataWithSlideAnimation(View view){
+        sendData();
+        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+    }
+
+    public void sendData(){
         Intent intent = new Intent(MainActivity.this, DataActivity.class);
         Bundle bundle = new Bundle();
 
@@ -40,7 +50,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtras(bundle);
 
         dataReturnLauncher.launch(intent);
-        overridePendingTransition(R.anim.rotate_in_right, R.anim.rotate_out_left);
     }
 
     private void onResultFromDataActivity(ActivityResult result){

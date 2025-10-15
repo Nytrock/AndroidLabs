@@ -4,7 +4,8 @@
     <string name="number_input">Введите число</string>
     <string name="text_input">Введите текст</string>
     <string name="show_date_checkbox">Показать текущее время</string>
-    <string name="data_button">Передать</string>
+    <string name="data_slide_button">Передать (анимация с движением)</string>
+    <string name="data_rotate_button">Передать (анимация с вращением)</string>
 
     <string name="data_result_title">Полученные данные</string>
     <string name="data_activity_label">Полученные данные</string>
