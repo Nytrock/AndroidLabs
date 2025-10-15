@@ -1,15 +1,20 @@
 <resources>
     <string name="app_name">Lab5</string>
-    <string name="second_activity">Результат</string>
-    <string name="edit_text_name">Введите фамилию</string>
-    <string name="edit_text_birthday">Введите год рождения</string>
-    <string name="status_select_title">Укажите социальное положение</string>
-    <string name="status_schoolboy">Школьник</string>
-    <string name="status_student">Студент</string>
-    <string name="status_engineer">Инженер</string>
-    <string name="button_submit">Ок</string>
-    <string name="name_title">Фамилия, имя</string>
-    <string name="birthday_title">Год рождения</string>
-    <string name="status_title">Социальное положение</string>
-    <string name="close">Закрыть</string>
+    <string name="app_title">Генератор открыток</string>
+    <string name="postcard_title">Открытка</string>
+    <string name="list_title">Список открыток</string>
+
+    <string name="title_input">Введите заголовок</string>
+    <string name="text_input">Введите текст</string>
+    <string name="background_title">Цвет фона</string>
+    <string name="background_white">Белый</string>
+    <string name="background_purple">Фиолетовый</string>
+    <string name="background_blue">Голубой</string>
+    <string name="date_checkbox">Добавить текущую дату</string>
+    <string name="gallery_button">Добавить изображение из галереи</string>
+    <string name="generate_button">Создать открытку</string>
+    <string name="list_button">Показать созданные открытки</string>
+    <string name="email_button">Превратить открытку в email</string>
+
+    <string name="close">x</string>
 </resources>

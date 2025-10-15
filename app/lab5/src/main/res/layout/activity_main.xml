@@ -8,63 +8,121 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextName"
+    <TextView
+        android:id="@+id/appTitle"
         android:layout_width="match_parent"
-        android:layout_height="58dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:text="@string/app_title"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/titleInput"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
         android:ems="10"
-        android:hint="@string/edit_text_name"
-        android:importantForAutofill="no"
+        android:hint="@string/title_input"
         android:inputType="text" />
 
     <EditText
-        android:id="@+id/editTextBirthday"
+        android:id="@+id/textInput"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="117dp"
         android:ems="10"
-        android:hint="@string/edit_text_birthday"
-        android:importantForAutofill="no"
-        android:inputType="number" />
+        android:gravity="start|top"
+        android:hint="@string/text_input"
+        android:inputType="textMultiLine" />
 
     <TextView
-        android:id="@+id/statusTitle"
+        android:id="@+id/backgroundTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/status_select_title"
+        android:text="@string/background_title"
         android:textSize="20sp" />
 
     <RadioGroup
+        android:id="@+id/backgroundContainer"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <RadioButton
-            android:id="@+id/radioSchoolboy"
+            android:id="@+id/backgroundWhite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRadioClick"
-            android:text="@string/status_schoolboy" />
-
-        <RadioButton
-            android:id="@+id/radioStudent"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:onClick="onRadioClick"
             android:checked="true"
-            android:text="@string/status_student" />
+            android:onClick="selectBackground"
+            android:text="@string/background_white" />
 
         <RadioButton
-            android:id="@+id/radioEngineer"
+            android:id="@+id/backgroundPurple"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="onRadioClick"
-            android:text="@string/status_engineer" />
+            android:onClick="selectBackground"
+            android:text="@string/background_purple" />
 
+        <RadioButton
+            android:id="@+id/backgroundBlue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="selectBackground"
+            android:text="@string/background_blue" />
     </RadioGroup>
 
-    <Button
-        android:id="@+id/buttonOk"
+    <CheckBox
+        android:id="@+id/dateCheckbox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="onClick"
-        android:text="@string/button_submit" />
+        android:text="@string/date_checkbox" />
+
+    <LinearLayout
+        android:id="@+id/galleryImageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/galleryButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:onClick="startImageSelect"
+            android:text="@string/gallery_button" />
+
+        <ImageView
+            android:id="@+id/galleryImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="20dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/buttonsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/generateButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="generatePostcard"
+            android:text="@string/generate_button" />
+
+        <Button
+            android:id="@+id/listButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="openList"
+            android:text="@string/list_button" />
+
+        <Button
+            android:id="@+id/emailButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="sendEmail"
+            android:text="@string/email_button" />
+    </LinearLayout>
+
 </LinearLayout>

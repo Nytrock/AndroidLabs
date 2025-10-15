@@ -18,7 +18,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".SecondActivity" android:label="@string/second_activity">
+        <activity android:name=".PostcardActivity" android:label="@string/postcard_title">
+        </activity>
+
+        <activity android:name=".ListActivity" android:label="@string/list_title">
         </activity>
     </application>
 

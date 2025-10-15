@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtras(bundle);
 
         dataReturnLauncher.launch(intent);
-        overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+        overridePendingTransition(R.anim.rotate_in_right, R.anim.rotate_out_left);
     }
 
     private void onResultFromDataActivity(ActivityResult result){
