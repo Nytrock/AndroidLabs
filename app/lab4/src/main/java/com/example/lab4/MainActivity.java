@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendData(){
-        Intent intent = new Intent(MainActivity.this, DataActivity.class);
+        Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         Bundle bundle = new Bundle();
 
         EditText textEdit = findViewById(R.id.editText);
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onResultFromDataActivity(ActivityResult result){
-        if (result.getResultCode() != DataActivity.RESULT_OK)
+        if (result.getResultCode() != SecondActivity.RESULT_OK)
             return;
 
         Intent data = result.getData();
