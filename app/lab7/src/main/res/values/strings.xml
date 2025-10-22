@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">Lab7</string>
+    <string name="title">Демонстрация меню</string>
+
+    <string name="menu_effects">Эффекты</string>
+    <string name="menu_open">Действия</string>
+    <string name="menu_theme">Тема</string>
+
+    <string name="menu_party">Вечеринка</string>
+    <string name="menu_rotate">Вращение</string>
+    <string name="menu_sound">Звук</string>
+    <string name="menu_vibration">Вибрация</string>
+    <string name="menu_photo">Сделать фото</string>
+    <string name="menu_timer">Включить таймер</string>
+    <string name="menu_window">Выйти</string>
+    <string name="menu_site">Открыть сайт</string>
+    <string name="menu_notification">Прислать уведомление</string>
+
+    <string name="timer_text">%1$d</string>
+    <string name="notifications_channel">Уведомления для теста</string>
+    <string name="notification_title">Уведомление</string>
+    <string name="notification_text">Оно было отправлено только что</string>
+
+    <string name="dialog_title">Подтверждение</string>
+    <string name="dialog_text">Вы действительно хотите выйти</string>
+    <string name="dialog_yes">Да</string>
+    <string name="dialog_no">Нет</string>
+</resources>

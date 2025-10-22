@@ -13,6 +13,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Random;
@@ -31,9 +32,13 @@ public class MainActivity extends AppCompatActivity {
     private int AdultsCounter = 0;
     private int[] KidsImages;
     private int[] AdultsImages;
+    private boolean IsError;
+    private int ImagesCount = 0;
 
     private final int MAX_PASSENGERS_COUNT = 15;
-    private final int IMAGES_COLUMNS_COUNT = 3;
+    private static final String KEY_KIDS_COUNT = "KIDS_COUNT";
+    private static final String KEY_ADULTS_COUNT = "ADULTS_COUNT";
+    private static final String KEY_IS_ERROR = "IS_ERROR";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +64,27 @@ public class MainActivity extends AppCompatActivity {
             ImagesContainer.removeAllViews();
             changeErrorState(false);
         });
+
+        if (savedInstanceState != null) {
+            KidsCounter = savedInstanceState.getInt(KEY_KIDS_COUNT);
+            AdultsCounter = savedInstanceState.getInt(KEY_ADULTS_COUNT);
+            IsError = savedInstanceState.getBoolean(KEY_IS_ERROR);
+
+            for (int i = 0; i < KidsCounter; i++)
+                addKidImage();
+            for (int i = 0; i < AdultsCounter; i++)
+                addAdultImage();
+            changeErrorState(IsError);
+        }
         updateText();
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_KIDS_COUNT, KidsCounter);
+        outState.putInt(KEY_ADULTS_COUNT, AdultsCounter);
+        outState.putBoolean(KEY_IS_ERROR, IsError);
     }
 
     public void addKid(View view) {
@@ -68,9 +93,13 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        addImage(KidsImages[Randomizer.nextInt(KidsImages.length)]);
+        addKidImage();
         KidsCounter++;
         updateText();
+    }
+
+    private void addKidImage() {
+        addImage(KidsImages[Randomizer.nextInt(KidsImages.length)]);
     }
 
     public void addAdult(View view) {
@@ -79,9 +108,13 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        addImage(AdultsImages[Randomizer.nextInt(AdultsImages.length)]);
+        addAdultImage();
         AdultsCounter++;
         updateText();
+    }
+
+    private void addAdultImage() {
+        addImage(AdultsImages[Randomizer.nextInt(AdultsImages.length)]);
     }
 
     private boolean isAirplaneFull() {
@@ -89,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void changeErrorState(boolean isError) {
+        IsError = isError;
         if (isError){
             ErrorTextView.setVisibility(VISIBLE);
             ErrorPlayer.start();
@@ -108,7 +142,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addImage(int image) {
-        int imageIndex = (KidsCounter + AdultsCounter) % IMAGES_COLUMNS_COUNT;
+        int IMAGES_COLUMNS_COUNT = 3;
+        int imageIndex = ImagesCount % IMAGES_COLUMNS_COUNT;
+        ImagesCount++;
         TableRow Row;
 
         if (imageIndex == 0) {
