@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Lab10</string>
+    <string name="play">Играть</string>
+    <string name="pause">Пауза</string>
+    <string name="stop">Стоп</string>
 </resources>
