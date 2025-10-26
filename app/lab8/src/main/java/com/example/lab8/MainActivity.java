@@ -9,7 +9,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Draw draw = new Draw(this);
-        setContentView(draw);
+        LandscapeView landscape = new LandscapeView(this);
+        setContentView(landscape);
     }
 }
