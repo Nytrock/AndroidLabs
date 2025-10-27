@@ -3,9 +3,9 @@ package com.example.lab8;
 public class Point {
     private final float x, y;
 
-    Point(float _x, float _y){
-        x = _x;
-        y = _y;
+    public Point(float x, float y){
+        this.x = x;
+        this.y = y;
     }
 
     public float getX() {
@@ -14,5 +14,19 @@ public class Point {
 
     public float getY() {
         return y;
+    }
+
+    public Point add(Point anotherPoint) {
+        return new Point(x + anotherPoint.x, y + anotherPoint.y);
+    }
+
+    public Point subtract(Point anotherPoint) {
+        return new Point(x - anotherPoint.x, y - anotherPoint.y);
+    }
+
+    public Point rotateToAngle(float angle) {
+        double new_x = x * Math.cos(angle) - y * Math.sin(angle);
+        double new_y = x * Math.sin(angle) - y * Math.cos(angle);
+        return new Point((float) new_x, (float) new_y);
     }
 }

@@ -16,12 +16,17 @@ public class ForegroundDrawer extends BaseDrawer {
     private final Path houseBasePath;
     private final Path houseRoofPath;
     private final Path treePath;
+    private final Path mountainPath;
+    private final Path mountainSnowPath1;
+    private final Path mountainSnowPath2;
 
     private final int hillsColor = Color.parseColor("#82c341");
     private final int treesColor = Color.parseColor("#007f3c");
     private final int darkTreesColor = Color.parseColor("#006931");
     private final int houseBaseColor = Color.parseColor("#f0c351");
     private final int houseDetailsColor = Color.parseColor("#6d3e08");
+    private final int mountainColor = Color.parseColor("#4f3d1b");
+    private final int mountainSnowColor = Color.parseColor("#cbcbcb");
 
     public ForegroundDrawer(Paint paint) {
         super(paint);
@@ -53,6 +58,28 @@ public class ForegroundDrawer extends BaseDrawer {
         treePath.lineTo(47, -38);
         treePath.lineTo(42, -38);
         treePath.lineTo(57, 0);
+
+        mountainPath = new Path();
+        mountainPath.moveTo(0, 0);
+        mountainPath.lineTo(-700, 0);
+        mountainPath.lineTo(0, -795);
+        mountainPath.lineTo(700, 0);
+
+        mountainSnowPath1 = new Path();
+        mountainSnowPath1.moveTo(0, -795);
+        mountainSnowPath1.lineTo(-268, -495);
+        mountainSnowPath1.lineTo(-195, -505);
+        mountainSnowPath1.lineTo(-130, -475);
+        mountainSnowPath1.lineTo(-58, -511);
+        mountainSnowPath1.lineTo(272, -487);
+
+        mountainSnowPath2 = new Path();
+        mountainSnowPath2.moveTo(0, -795);
+        mountainSnowPath2.lineTo(-268, -495);
+        mountainSnowPath2.lineTo(-176, -520);
+        mountainSnowPath2.lineTo(16, -427);
+        mountainSnowPath2.lineTo(91, -557);
+        mountainSnowPath2.lineTo(272, -487);
     }
 
     @Override
@@ -60,8 +87,8 @@ public class ForegroundDrawer extends BaseDrawer {
         this.canvas = canvas;
         lightColor = daytimeManager.getNowObjectsColor();
 
-        drawHills();
         drawMountains();
+        drawHills();
         drawTrees();
         drawHouse();
     }
@@ -108,11 +135,28 @@ public class ForegroundDrawer extends BaseDrawer {
     }
 
     private void drawMountains() {
+        paint.setStyle(Paint.Style.FILL);
+        int mountain = ColorUtility.multiplyColors(mountainColor, lightColor);
+        int mountainSnow = ColorUtility.multiplyColors(mountainSnowColor, lightColor);
 
+        drawMountain(507, 980, 0.9f, mountainSnowPath2, mountain, mountainSnow);
+        drawMountain(1150, 880, 1, mountainSnowPath1, mountain, mountainSnow);
+        drawMountain(1690, 850, 0.75f, mountainSnowPath2, mountain, mountainSnow);
+        drawMountain(2157, 920, 0.6f, mountainSnowPath1, mountain, mountainSnow);
     }
 
-    private void drawMountain(int x, int y, float scale) {
+    private void drawMountain(int x, int y, float scale, Path snowStyle, int mountainColor, int mountainSnowColor) {
+        canvas.save();
+        canvas.translate(x, y);
+        canvas.scale(scale, scale);
 
+        paint.setColor(mountainColor);
+        canvas.drawPath(mountainPath, paint);
+        
+        paint.setColor(mountainSnowColor);
+        canvas.drawPath(snowStyle, paint);
+
+        canvas.restore();
     }
 
     private void drawHouse() {

@@ -12,6 +12,7 @@ public class DaytimeManager {
     private int nextDaytimeIndex = 1;
 
     private float nowTime = 0;
+    private float deltaTime = 0;
     private long lastTime;
     private boolean isWaitingNextDay;
 
@@ -22,7 +23,7 @@ public class DaytimeManager {
 
     public DaytimeManager() {
         daytimes = new DaytimeData[4];
-        daytimes[0] = new DaytimeData(Color.parseColor("#8FDAF9"), Color.parseColor("#ffec8a"), 7, 30);
+        daytimes[0] = new DaytimeData(Color.parseColor("#8FDAF9"), Color.parseColor("#ffec8a"), 4, 30);
         daytimes[1] = new DaytimeData(Color.parseColor("#58ADF3"), Color.parseColor("#FFFFFF"), 10, 0);
         daytimes[2] = new DaytimeData(Color.parseColor("#A0452C"), Color.parseColor("#d3b6fc"), 18, 30);
         daytimes[3] = new DaytimeData(Color.parseColor("#2F0957"), Color.parseColor("#aeabf7"), 22, 0);
@@ -34,7 +35,7 @@ public class DaytimeManager {
 
     public void update() {
         float timeSpeed = 0.1f;
-        float deltaTime = (System.currentTimeMillis() - lastTime) * timeSpeed;
+        deltaTime = (System.currentTimeMillis() - lastTime) * timeSpeed;
         lastTime = System.currentTimeMillis();
 
         updateTime(deltaTime);
@@ -88,5 +89,13 @@ public class DaytimeManager {
 
     public int getNowObjectsColor() {
         return nowObjectsColor;
+    }
+
+    public int getStartTimeOfDaytime(int index){
+        return daytimes[index].getStartTime();
+    }
+
+    public float getNowTime() {
+        return nowTime;
     }
 }
