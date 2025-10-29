@@ -4,8 +4,6 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.RectF;
-
 import com.example.lab8.ColorUtility;
 import com.example.lab8.Daytime.DaytimeManager;
 

@@ -23,7 +23,7 @@ public class DaytimeManager {
 
     public DaytimeManager() {
         daytimes = new DaytimeData[4];
-        daytimes[0] = new DaytimeData(Color.parseColor("#8FDAF9"), Color.parseColor("#ffec8a"), 4, 30);
+        daytimes[0] = new DaytimeData(Color.parseColor("#8FDAF9"), Color.parseColor("#fff5c4"), 4, 30);
         daytimes[1] = new DaytimeData(Color.parseColor("#58ADF3"), Color.parseColor("#FFFFFF"), 10, 0);
         daytimes[2] = new DaytimeData(Color.parseColor("#A0452C"), Color.parseColor("#d3b6fc"), 18, 30);
         daytimes[3] = new DaytimeData(Color.parseColor("#2F0957"), Color.parseColor("#aeabf7"), 22, 0);
@@ -67,7 +67,6 @@ public class DaytimeManager {
         int changingColorsTargetTime = 60;
 
         float interval = changingColorsNowTime / changingColorsTargetTime;
-        Log.i("Interval", String.valueOf(interval));
         nowSkyColor = ColorUtility.lerpColor(previousDaytime.getSkyColor(), nowDaytime.getSkyColor(), interval);
         nowObjectsColor = ColorUtility.lerpColor(previousDaytime.getObjectsColor(), nowDaytime.getObjectsColor(), interval);
 
@@ -97,5 +96,9 @@ public class DaytimeManager {
 
     public float getNowTime() {
         return nowTime;
+    }
+
+    public float getDeltaTime() {
+        return deltaTime;
     }
 }

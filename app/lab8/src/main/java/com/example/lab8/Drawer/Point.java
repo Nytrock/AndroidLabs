@@ -1,7 +1,7 @@
-package com.example.lab8;
+package com.example.lab8.Drawer;
 
 public class Point {
-    private final float x, y;
+    private float x, y;
 
     public Point(float x, float y){
         this.x = x;
@@ -28,5 +28,13 @@ public class Point {
         double new_x = x * Math.cos(angle) - y * Math.sin(angle);
         double new_y = x * Math.sin(angle) - y * Math.cos(angle);
         return new Point((float) new_x, (float) new_y);
+    }
+
+    public void addToX(float value){
+        x += value;
+    }
+
+    public void addToY(float value){
+        y += value;
     }
 }

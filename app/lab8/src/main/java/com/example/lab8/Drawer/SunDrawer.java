@@ -6,13 +6,12 @@ import android.graphics.Paint;
 
 import com.example.lab8.ColorUtility;
 import com.example.lab8.Daytime.DaytimeManager;
-import com.example.lab8.Point;
 
 public class SunDrawer extends BaseDrawer {
-    private final Point rotationCenter = new Point(1181, 932);
-    private final Point startPoint = new Point(2162, 932);
+    private final Point rotationCenter = new Point(1181, 1050);
+    private final Point startPoint = new Point(2262, 932);
     private final int sunColor = Color.parseColor("#e6d00b");
-    private final float sunRadius = 30f;
+    private final float sunRadius = 100f;
 
     public SunDrawer(Paint paint) {
         super(paint);
@@ -29,8 +28,8 @@ public class SunDrawer extends BaseDrawer {
             interval = (nowTime - morningTime) / (nightTime - morningTime);
         }
 
-        float startAngle = 180, endAngle = 0;
-        float nowAngle = endAngle - (startAngle - endAngle) * interval;
+        float startAngle = 180, endAngle = 20;
+        float nowAngle = startAngle + (startAngle - endAngle) * interval;
         nowAngle = nowAngle * (float)Math.PI / 180f;
 
         Point positionPoint = startPoint.subtract(rotationCenter);
