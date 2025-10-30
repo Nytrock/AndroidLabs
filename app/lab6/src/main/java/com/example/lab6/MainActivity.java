@@ -61,13 +61,13 @@ public class MainActivity extends AppCompatActivity {
         if (uri == null)
             return;
 
-        try{
-            OutputStream fos = getContentResolver().openOutputStream(uri);
-            if (fos == null)
+        try {
+            OutputStream stream = getContentResolver().openOutputStream(uri);
+            if (stream == null)
                 return;
 
-            fos.write(getText().getBytes());
-            fos.close();
+            stream.write(getText().getBytes());
+            stream.close();
         } catch (IOException e){
             Log.e("File", e.toString());
         }
@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity {
             BarcodeEncoder barcodeEncoder = new BarcodeEncoder();
             BitMatrix bitMatrix = barcodeEncoder.encode(getText(), BarcodeFormat.QR_CODE, 500, 500);
             bitmap = barcodeEncoder.createBitmap(bitMatrix);
-        } catch (WriterException e){
+        } catch (WriterException e) {
             Log.e("QR", e.toString());
         }
 
