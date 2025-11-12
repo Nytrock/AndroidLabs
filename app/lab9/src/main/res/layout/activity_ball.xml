@@ -11,25 +11,23 @@
         android:layout_width="70dp"
         android:layout_height="70dp"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/hole" />
+        app:srcCompat="@drawable/hole"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="171dp"
+        tools:layout_editor_absoluteY="331dp" />
 
     <ImageView
         android:id="@+id/ballView"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ball" />
+        app:srcCompat="@drawable/ball"
+        tools:layout_editor_absoluteX="176dp"
+        tools:layout_editor_absoluteY="336dp"
+        tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/backButton"
+        android:id="@+id/ballBackButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
