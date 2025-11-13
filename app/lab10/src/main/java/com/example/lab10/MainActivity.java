@@ -42,10 +42,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void run() {
             int milliseconds = mediaPlayer.getCurrentPosition();
+            if (milliseconds > mediaPlayer.getDuration())
+                milliseconds = mediaPlayer.getDuration();
+
             songProgress.setProgress(milliseconds);
             songProgressText.setText(millisecondsToString(milliseconds));
 
-            if (milliseconds >= mediaPlayer.getDuration())
+            if (milliseconds >= mediaPlayer.getDuration() && !mediaPlayer.isLooping())
                 nextSong();
             handler.postDelayed(this, 100);
         }
@@ -88,7 +91,7 @@ public class MainActivity extends AppCompatActivity {
         try (MediaMetadataRetriever retriever = new MediaMetadataRetriever()) {
             retriever.setDataSource(this, uri);
             String title = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_TITLE);
-            String author = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_AUTHOR);
+            String author = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_ARTIST);
             songTitle.setText(title);
             songAuthor.setText(author);
 
