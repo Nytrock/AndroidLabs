@@ -44,6 +44,9 @@ public class MainActivity extends AppCompatActivity {
             int milliseconds = mediaPlayer.getCurrentPosition();
             songProgress.setProgress(milliseconds);
             songProgressText.setText(millisecondsToString(milliseconds));
+
+            if (milliseconds >= mediaPlayer.getDuration())
+                nextSong();
             handler.postDelayed(this, 100);
         }
     };
@@ -102,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (mediaPlayer != null) {
             if (mediaPlayer.isPlaying())
-                changePlayState(playButton);
+                changePlayState();
             mediaPlayer.stop();
             mediaPlayer.release();
         }
@@ -111,10 +114,14 @@ public class MainActivity extends AppCompatActivity {
         songDuration.setText(millisecondsToString(mediaPlayer.getDuration()));
         songProgress.setMax(mediaPlayer.getDuration());
         if (isPlaying)
-            changePlayState(playButton);
+            changePlayState();
     }
 
-    public void changePlayState(View view) {
+    public void onPlayButtonClicked(View view) {
+        changePlayState();
+    }
+
+    private void changePlayState() {
         if (mediaPlayer.isPlaying()){
             mediaPlayer.pause();
             playButton.setImageResource(R.drawable.play);
@@ -124,12 +131,20 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void nextSong(View view) {
+    public void onNextSongButtonClicked(View view) {
+        nextSong();
+    }
+
+    public void onPreviousSongButtonClicked(View view) {
+        previousSong();
+    }
+
+    private void nextSong() {
         int newSong = (nowSong + 1) % songs.length;
         setNowSong(newSong);
     }
 
-    public void previousSong(View view) {
+    private void previousSong() {
         int newSong = nowSong - 1;
         if (newSong < 0)
             newSong = songs.length - 1;

@@ -107,7 +107,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:importantForAccessibility="no"
-                android:onClick="previousSong"
+                android:onClick="onPreviousSongButtonClicked"
                 app:srcCompat="@drawable/previous" />
 
             <ImageView
@@ -117,7 +117,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:importantForAccessibility="no"
-                android:onClick="changePlayState"
+                android:onClick="onPlayButtonClicked"
                 app:srcCompat="@drawable/play" />
 
             <ImageView
@@ -125,7 +125,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:importantForAccessibility="no"
-                android:onClick="nextSong"
+                android:onClick="onNextSongButtonClicked"
                 app:srcCompat="@drawable/next" />
 
             <ImageView
