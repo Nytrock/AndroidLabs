@@ -21,13 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Labs"
 include ':app'
-include ':app:lab1'
-include ':app:lab2'
-include ':app:lab3'
-include ':app:lab4'
-include ':app:lab5'
-include ':app:lab6'
-include ':app:lab7'
-include ':app:lab8'
-include ':app:lab9'
-include ':app:lab10'

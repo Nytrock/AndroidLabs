@@ -1,7 +1,0 @@
-<resources>
-    <string name="app_name">Lab9</string>
-    <string name="light_button">Датчик освещённости</string>
-    <string name="light_text">%1$s люкс</string>
-    <string name="ball_button">Игра в мяч</string>
-    <string name="back">Назад</string>
-</resources>

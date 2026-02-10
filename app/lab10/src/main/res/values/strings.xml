@@ -1,4 +1,0 @@
-<resources>
-    <string name="app_name">Lab10</string>
-    <string name="timer_format">%02d:%02d</string>
-</resources>
