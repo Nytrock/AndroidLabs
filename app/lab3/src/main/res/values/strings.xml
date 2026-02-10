@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Lab3</string>
+    <string name="read">Прочесть файл</string>
+    <string name="write">Записать в файл</string>
 </resources>
