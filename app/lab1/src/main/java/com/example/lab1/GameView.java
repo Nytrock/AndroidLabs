@@ -175,7 +175,7 @@ public class GameView extends SurfaceView implements Runnable {
         listener.onGameOver(score);
     }
 
-    private void checkIfNewSpaceBody(){
+    private void checkIfNewSpaceBody() {
         if (currentTime >= nextSpaceBodyTime) {
             boolean dropBonus = random.nextInt(10) == 1;
 
@@ -245,7 +245,13 @@ public class GameView extends SurfaceView implements Runnable {
     }
 
     private void destroyAllAsteroids() {
-        spaceBodies.clear();
         currentBonus = null;
+
+        for (int i = 0; i < spaceBodies.size(); i++){
+            if (spaceBodies.get(i) instanceof Asteroid){
+                spaceBodies.remove(i);
+                i--;
+            }
+        }
     }
 }
