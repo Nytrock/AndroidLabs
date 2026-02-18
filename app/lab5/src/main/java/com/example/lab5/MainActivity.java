@@ -36,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
             Log.d("My logs", "i = " + i);
 
             View item = layoutInflater.inflate(R.layout.item, linearLayout, false);
-            TextView nameView = findViewById(R.id.nameView);
-            TextView positionView = findViewById(R.id.positionView);
-            TextView salaryView = findViewById(R.id.salaryView);
+            TextView nameView = item.findViewById(R.id.nameView);
+            TextView positionView = item.findViewById(R.id.positionView);
+            TextView salaryView = item.findViewById(R.id.salaryView);
 
             nameView.setText(names[i]);
             positionView.setText("Должность: " + positions[i]);

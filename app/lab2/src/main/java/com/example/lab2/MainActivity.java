@@ -1,62 +1,98 @@
 package com.example.lab2;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private EditText editText;
-    private Button buttonLoad, buttonSave;
+public class MainActivity extends AppCompatActivity {
 
-    private SharedPreferences preferences;
-    private final String SAVED_TEXT = "saved_text";
+    private EditText stringEdit;
+    private EditText integerEdit;
+    private CheckBox booleanEdit;
+    private TextView sharedText;
+
+    private final String STRING_KEY = "saved_string";
+    private final String INTEGER_KEY = "saved_int";
+    private final String BOOLEAN_KEY = "saved_bool";
+
+    public final static String SHARED_FILENAME = "shared_data";
+    public final static String SHARED_KEY = "saved_shared";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        editText = findViewById(R.id.etText);
-        buttonLoad = findViewById(R.id.btnLoad);
-        buttonSave = findViewById(R.id.btnSave);
+        stringEdit = findViewById(R.id.textEdit);
+        integerEdit = findViewById(R.id.numberEdit);
+        booleanEdit = findViewById(R.id.booleanEdit);
+        sharedText = findViewById(R.id.sharedTextView);
 
-        buttonSave.setOnClickListener(this);
-        buttonLoad.setOnClickListener(this);
-
-        loadText();
+        findViewById(R.id.saveButton).setOnClickListener(view -> saveData());
+        findViewById(R.id.loadButton).setOnClickListener(view -> loadData());
+        findViewById(R.id.resetButton).setOnClickListener(view -> cleanData());
+        findViewById(R.id.sharedLoadButton).setOnClickListener(view -> loadSharedData());
+        findViewById(R.id.sharedOpenButton).setOnClickListener(view -> openSharedActivity());
     }
 
-    @Override
-    public void onClick(View button) {
-        if (button.getId() == R.id.btnSave)
-            saveText();
-        else if (button.getId() == R.id.btnLoad)
-            loadText();
-    }
+    private void saveData() {
+        String integer = integerEdit.getText().toString();
+        if (integer.isEmpty())
+            integer = "0";
 
-    private void saveText() {
-        preferences = getPreferences(MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(SAVED_TEXT, editText.getText().toString());
+        SharedPreferences mainPreferences = getPreferences(MODE_PRIVATE);
+        SharedPreferences.Editor editor = mainPreferences.edit();
+        editor.putString(STRING_KEY, stringEdit.getText().toString());
+        editor.putInt(INTEGER_KEY, Integer.parseInt(integer));
+        editor.putBoolean(BOOLEAN_KEY, booleanEdit.isChecked());
         editor.apply();
-        Toast.makeText(this, "Text saved", Toast.LENGTH_SHORT).show();
+
+        Toast.makeText(this, R.string.save_message, Toast.LENGTH_SHORT).show();
     }
 
-    private void loadText() {
-        preferences = getPreferences(MODE_PRIVATE);
-        String savedText = preferences.getString(SAVED_TEXT, "");
-        editText.setText(savedText);
-        Toast.makeText(this, "Text loaded", Toast.LENGTH_SHORT).show();
+    private void loadData() {
+        SharedPreferences mainPreferences = getPreferences(MODE_PRIVATE);
+        String savedText = mainPreferences.getString(STRING_KEY, "");
+        int savedInteger = mainPreferences.getInt(INTEGER_KEY, 0);
+        boolean savedBoolean = mainPreferences.getBoolean(BOOLEAN_KEY, false);
+
+        stringEdit.setText(savedText);
+        integerEdit.setText(String.valueOf(savedInteger));
+        booleanEdit.setChecked(savedBoolean);
+
+        Toast.makeText(this, R.string.load_message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void cleanData() {
+        stringEdit.setText("");
+        integerEdit.setText("0");
+        booleanEdit.setChecked(false);
+
+        Toast.makeText(this, R.string.reset_message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void loadSharedData() {
+        SharedPreferences sharedPreferences = getSharedPreferences(SHARED_FILENAME, MODE_PRIVATE);
+        String sharedString = sharedPreferences.getString(SHARED_KEY, "");
+        sharedText.setText(sharedString);
+
+        Toast.makeText(this, R.string.load_message, Toast.LENGTH_SHORT).show();
+    }
+
+    private void openSharedActivity() {
+        Intent intent = new Intent(MainActivity.this, SharedActivity.class);
+        startActivity(intent);
     }
 
     @Override
     protected void onDestroy() {
-        saveText();
+        saveData();
         super.onDestroy();
     }
 }

@@ -1,40 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-
-    <EditText
-        android:id="@+id/etText"
+    <LinearLayout
+        android:id="@+id/mainLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        tools:ignore="LabelFor" />
+        android:layout_marginBottom="100sp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/textEdit"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:ems="10"
+            android:hint="@string/string_hint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            tools:ignore="LabelFor" />
+
+        <EditText
+            android:id="@+id/numberEdit"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:ems="10"
+            android:hint="@string/int_hint"
+            android:importantForAutofill="no"
+            android:inputType="number" />
+
+        <CheckBox
+            android:id="@+id/booleanEdit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/bool_hint" />
+
+        <LinearLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/saveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/save" />
+
+            <Button
+                android:id="@+id/loadButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/load" />
+
+            <Button
+                android:id="@+id/resetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/reset" />
+        </LinearLayout>
+
+    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/sharedLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/sharedTextView"
+            android:layout_width="match_parent"
+            android:layout_height="50sp"
+            android:clickable="false"
+            android:ems="10"
+            android:enabled="false"
+            android:importantForAutofill="no"
+            android:inputType="text" />
 
         <Button
-            android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
+            android:id="@+id/sharedLoadButton"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/save" />
+            android:text="@string/shared_load" />
 
         <Button
-            android:id="@+id/btnLoad"
-            android:layout_width="wrap_content"
+            android:id="@+id/sharedOpenButton"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/load" />
+            android:text="@string/shared_open" />
     </LinearLayout>
+
 </LinearLayout>

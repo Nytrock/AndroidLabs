@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">Lab3</string>
-    <string name="read">Прочесть файл</string>
-    <string name="write">Записать в файл</string>
+
+    <string name="text_hint">Введите текст</string>
+    <string name="file_save">Сохранить в файл</string>
+    <string name="file_load">Загрузить из файла</string>
+    <string name="pdf_save">Сохранить в PDF</string>
+
+    <string name="photo_start">Сделать фотографию</string>
+    <string name="photo_save">Сохранить фотографию</string>
+    <string name="video_start">Снять видео</string>
+
+    <string name="save_message">Файл сохранён</string>
+    <string name="load_message">Файл загружен</string>
+    <string name="photo_message">Фото сохранено</string>
+    <string name="video_message">Видео сохранено</string>
 </resources>
