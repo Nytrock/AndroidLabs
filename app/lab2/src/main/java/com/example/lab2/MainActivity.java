@@ -11,7 +11,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
     private EditText stringEdit;
     private EditText integerEdit;
     private CheckBox booleanEdit;
